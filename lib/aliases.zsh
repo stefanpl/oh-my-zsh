@@ -37,7 +37,7 @@ alias afind='ack-grep -il'
 # Stefan's aliases
 #########################################
 
-alias wowscreen="sh /home/stefan/scripts/wowscreen.sh"
+alias wowscreen="sh ~/scripts/wowscreen.sh"
 alias kp="keepass2 &"
 alias mkd="makeDirectoryAndGoThere"
 alias h="cd ~/"
@@ -53,8 +53,8 @@ alias vimrc="vim ~/.vimrc"
 alias ..="cd .."
 alias gl="git log --oneline -10 | cat"
 alias ll="ls -aFl --block-size=K"
-alias aliases="vim /home/stefan/.oh-my-zsh/lib/aliases.zsh; source ~/.oh-my-zsh/lib/aliases.zsh"
-alias aliases_private="vim /home/stefan/.bash_aliases_private ;source /home/stefan/.bash_aliases_private"
+alias aliases="vim ~/.oh-my-zsh/lib/aliases.zsh; source ~/.oh-my-zsh/lib/aliases.zsh"
+alias aliases_private="vim ~/.bash_aliases_private ;source ~/.bash_aliases_private"
 alias -g le="| less"
 alias -g gr="| grep -i"
 alias zshrc="vim ~/.zshrc; source ~/.zshrc"
