@@ -28,7 +28,7 @@ fi
 # List direcory contents
 alias lsa='ls -lah'
 alias l='ls -lah'
-alias ll='ls -lh'
+alias ll='ls -lah'
 alias la='ls -lAh'
 
 alias afind='ack-grep -il'
@@ -55,7 +55,10 @@ alias gl="git log --oneline -10 | cat"
 alias aliases="vim ~/.oh-my-zsh/lib/aliases.zsh; source ~/.oh-my-zsh/lib/aliases.zsh"
 alias aliases_private="vim ~/.bash_aliases_private ;source ~/.bash_aliases_private"
 alias -g le="| less"
-alias -g gr="| grep -i"
+alias -g gr="| egrep -i"
 alias zshrc="vim ~/.zshrc; source ~/.zshrc"
-
-
+alias -g t="tree -L"
+alias -g gir="grep -ir"
+alias git_boilerplate="sh ~/scripts/git_boilerplate.sh"
+alias f="ls -al | egrep -v '^d'"
+alias d="ls -al | egrep '^d'"

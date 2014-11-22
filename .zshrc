@@ -84,7 +84,7 @@ export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/g
 # Stefan custom stuff
 bindkey -v
 export KEYTIMEOUT=1
-source ~/.oh-my-zsh/.bash_functions
+source ~/.oh-my-zsh/.cli_functions
 source ~/.bash_aliases_private
 source ~/.oh-my-zsh/lib/aliases.zsh
 bindkey "^R" history-incremental-search-backward
