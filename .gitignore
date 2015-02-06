@@ -1,6 +1,4 @@
 locals.zsh
-# kept in home directory:
-.zshrc
 log/.zsh_history
 projects.zsh
 custom
