@@ -88,3 +88,6 @@ source ~/.oh-my-zsh/.cli_functions
 source ~/.bash_aliases_private
 source ~/.oh-my-zsh/lib/aliases.zsh
 bindkey "^R" history-incremental-search-backward
+# enable vim as default editor
+export VISUAL=vim
+export EDITOR="$VISUAL"
