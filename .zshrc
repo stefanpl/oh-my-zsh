@@ -88,6 +88,12 @@ source ~/.oh-my-zsh/.cli_functions
 source ~/.bash_aliases_private
 source ~/.oh-my-zsh/lib/aliases.zsh
 bindkey "^R" history-incremental-search-backward
-# enable vim as default editor
-export VISUAL=vim
-export EDITOR="$VISUAL"
+
+# maybe show vi-status ...
+function zle-keymap-select {
+    VIMODE="${${KEYMAP/vicmd/ M:command}/(main|viins)/}"
+	    zle reset-prompt
+
+}
+
+zle -N zle-keymap-select
