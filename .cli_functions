@@ -6,3 +6,10 @@ makeDirectoryAndGoThere() {
 checkIfUrlIsAvailable() {
 	whois $1 | egrep -i "no match"
 }
+
+# fixes permissions in webdev directory
+fixperms() {
+	sudo chown -R stefan:www-data $1	
+	sudo find $1 -type d -exec chmod 775 {} +
+	sudo find $1 -type f -exec chmod 664 {} +
+}
