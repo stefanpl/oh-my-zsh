@@ -13,3 +13,8 @@ fixperms() {
 	sudo find $1 -type d -exec chmod 775 {} +
 	sudo find $1 -type f -exec chmod 664 {} +
 }
+
+# prefixes a file with a prefix
+prefix_file() {
+	mv $1 $2$1
+}
