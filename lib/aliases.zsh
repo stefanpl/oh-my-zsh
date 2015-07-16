@@ -6,7 +6,7 @@ alias ...='cd ../..'
 alias -- -='cd -'
 
 # Super user
-alias _='sudo'
+alias -g _='sudo'
 alias please='sudo'
 
 #alias g='grep -in'
@@ -60,7 +60,6 @@ alias zshrc="vim ~/.zshrc; source ~/.zshrc"
 alias -g t="tree -L"
 alias -g gir="egrep -ir"
 alias git_boilerplate="sh ~/scripts/git_boilerplate.sh"
-alias -g f="sudo"
 alias d="ls -alh | egrep '^d'"
 alias co="git checkout"
 alias cs="du -sh"

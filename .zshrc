@@ -5,7 +5,7 @@ export ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="dpoggi"
+ZSH_THEME="maran"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -93,7 +93,6 @@ bindkey "^R" history-incremental-search-backward
 function zle-keymap-select {
     VIMODE="${${KEYMAP/vicmd/ M:command}/(main|viins)/}"
 	    zle reset-prompt
-
 }
 
 zle -N zle-keymap-select
