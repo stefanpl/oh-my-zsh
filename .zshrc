@@ -82,7 +82,10 @@ export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/g
 #
 #####################
 # Stefan custom stuff
+
+# activate vim mode
 bindkey -v
+
 export KEYTIMEOUT=1
 source ~/.oh-my-zsh/.cli_functions
 source ~/.bash_aliases_private
