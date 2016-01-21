@@ -16,7 +16,13 @@ fixperms() {
 
 # prefixes a file with a prefix
 prefix_file() {
-	mv $1 $2$1
+	if [ -z "$2" ]
+	then 
+		prefix="_"
+	else
+		prefix=$2
+	fi
+	mv $1 $prefix$1
 }
 
 # make all file in directory lowercase

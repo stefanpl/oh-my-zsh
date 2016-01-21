@@ -88,7 +88,9 @@ bindkey -v
 
 export KEYTIMEOUT=1
 source ~/.oh-my-zsh/.cli_functions
-source ~/.bash_aliases_private
+if [ -f ~/.bash_aliases_private ]; then
+	source ~/.bash_aliases_private
+fi
 source ~/.oh-my-zsh/lib/aliases.zsh
 bindkey "^R" history-incremental-search-backward
 
