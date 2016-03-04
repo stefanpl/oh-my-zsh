@@ -30,9 +30,22 @@ lowercase_files() {
 	find $1 -depth -exec rename 's/(.*)\/([^\/]*)/$1\/\L$2/' {} \;
 }
 
-# create an utf8 database
 create_utf8_database() {
 	echo "create database $1 character set utf8 collate utf8_general_ci" > /tmp/createdb.sql
 	mysql -u root --password < /tmp/createdb.sql && echo "database $1 created!"
 	rm /tmp/createdb.sql
+}
+
+download_latest_wordpress() {
+	cd /tmp
+	curl -O https://wordpress.org/latest.tar.gz
+	tar -xzf latest.tar.gz
+	rm /tmp/latest.tar.gz
+	if [ -z "$1" ]
+	then 
+		echo "Downloaded and extracted to /tmp/wordpress"
+	else
+		mv /tmp/wordpress "$1" && echo "Downloaded and extracted to "$1
+	fi
+	cd -
 }

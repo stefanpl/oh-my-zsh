@@ -109,3 +109,4 @@ alias dbs="echo \"show databases\" > /tmp/mysqlcommand.sql && mysql -u root --pa
 alias gsubs="git submodule update --init --recursive"
 alias pip="curl -s https://api.ipify.org && echo ''"
 alias .oh="cd $HOME/.oh-my-zsh"
+alias dlwp="download_lastest_wordpress"
