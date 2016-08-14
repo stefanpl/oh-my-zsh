@@ -49,3 +49,8 @@ download_latest_wordpress() {
 	fi
 	cd -
 }
+
+# open something in background
+open_in_background() {
+	xdg-open $1 2>/dev/null &
+}
