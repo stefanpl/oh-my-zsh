@@ -45,9 +45,10 @@ DISABLE_AUTO_UPDATE="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git vi-mode)
 
 source $ZSH/oh-my-zsh.sh
+source $ZSH/.zshenv
 
 # User configuration
 
@@ -83,7 +84,7 @@ export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/g
 #####################
 # Stefan custom stuff
 
-# activate vim mode
+# activate vi mode
 bindkey -v
 
 export KEYTIMEOUT=1
@@ -93,10 +94,5 @@ if [ -f ~/.bash_aliases_private ]; then
 fi
 bindkey "^R" history-incremental-search-backward
 
-# maybe show vi-status ...
-function zle-keymap-select {
-    VIMODE="${${KEYMAP/vicmd/ M:command}/(main|viins)/}"
-	    zle reset-prompt
-}
-
-zle -N zle-keymap-select
+# indicator for vi mode
+MODE_INDICATOR="%{$fg_bold[red]%}[CMD MODE]%{$reset_color%}"
