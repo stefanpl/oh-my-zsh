@@ -126,3 +126,4 @@ alias mouseoff='xinput set-prop "TPPS/2 IBM TrackPoint" "Device Enabled" 0 && xi
 alias mouseon='xinput set-prop "TPPS/2 IBM TrackPoint" "Device Enabled" 1 && xinput set-prop "pointer:Lenovo ThinkPad Compact USB Keyboard with TrackPoint" "Device Enabled" 1'
 alias on="mouseon"
 alias hmax="hall"
+alias -g npme='PATH=$(npm bin):$PATH'

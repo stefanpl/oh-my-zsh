@@ -96,3 +96,6 @@ bindkey "^R" history-incremental-search-backward
 
 # indicator for vi mode
 MODE_INDICATOR="%{$fg_bold[red]%}[CMD MODE]%{$reset_color%}"
+
+# add node_scripts to path
+export PATH=~/node_scripts/:$PATH
