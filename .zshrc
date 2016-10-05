@@ -98,4 +98,7 @@ bindkey "^R" history-incremental-search-backward
 MODE_INDICATOR="%{$fg_bold[red]%}[CMD MODE]%{$reset_color%}"
 
 # add node_scripts to path
-export PATH=~/node_scripts/:$PATH
+export PATH=~/node_scripts/.bin/:$PATH
+
+# add scripts to path
+export PATH=~/.oh-my-zsh/scripts/:$PATH
