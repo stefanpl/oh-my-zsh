@@ -27,7 +27,7 @@ prefix_file() {
 
 # make all file in directory lowercase
 lowercase_files() {
-	find $1 -depth -exec rename 's/(.*)\/([^\/]*)/$1\/\L$2/' {} \;
+	find $1 -maxdepth 1 -mindepth 1 -exec rename 's/(.*)\/([^\/]*)/$1\/\L$2/' {} \;
 }
 
 create_utf8_database() {
