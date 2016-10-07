@@ -26,7 +26,7 @@ else
 fi
 # List direcory contents
 alias lsa='ls -lah'
-alias l='ls -lah'
+alias l='ls -lAh'
 alias ll='ls -lah'
 alias la='ls -lAh'
 
@@ -43,11 +43,11 @@ alias h="cd ~"
 alias s="git status"
 alias rma="sudo rm -Rfv"
 alias keys="sudo subl /usr/share/X11/xkb/symbols/de"
-alias tt="sh ~/scripts/toggleTouchpad.sh"
+alias tt="toggle_touchpad"
 alias myip="ifconfig | egrep \"inet addr:[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+\" -o"
 alias down="sudo shutdown -h now 'all the way down...'"
 alias rebo="sudo shutdown -r now \"I'll be back!\""
-alias dark="keepScreenOff.sh"
+alias dark="keep_screen_off"
 alias vimrc="vim ~/.vimrc"
 alias ..="cd .."
 alias gl="git log --oneline -10 | cat"
@@ -60,7 +60,7 @@ alias zshrc="vim ~/.zshrc; source ~/.zshrc"
 alias -g t="tree -L"
 alias -g gir="egrep -ir"
 alias git_boilerplate="sh ~/scripts/git_boilerplate.sh"
-alias d="ls -alh | egrep '^d'"
+alias d="ls -Alh | egrep '^d'"
 alias co="git checkout"
 alias cs="du -sh"
 alias rmf="rm -Rf"

@@ -1,0 +1,39 @@
+#!/usr/bin/env php
+<?php
+
+class RandomStringCreator {
+
+	const CHARACTER_SET_KEYBOARD = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890ß@´!"§$%&\\/()=?`äüöÖÄÜ+*~#\'.:-_<>,;{}[]';
+	const DEFAULT_LENGTH = 100;
+
+	public static function generate_random_string( $length = null, $string_of_characters = null ) {
+		$length = self::check_length( $length );
+		$string_of_characters = self::check_characters( $string_of_characters );
+		$returnString = "";
+		for($i = 0; $i<$length; $i++) {
+			$randomNumber = rand(0, mb_strlen( $string_of_characters, 'UTF-8' )-1);
+			$newChar = mb_substr( $string_of_characters, $randomNumber, 1, 'UTF-8' );
+			$returnString .= $newChar;
+		}
+		return $returnString;	
+	}
+
+	private static function check_length( $length ) {
+		if ( isset( $length ) && intval( $length ) > 0 ) {
+			return $length;
+		}
+		return self::DEFAULT_LENGTH;
+	}
+
+	private static function check_characters( $string_of_characters ) {
+		if ( isset( $string_of_characters ) && strlen( $string_of_characters ) > 0 ) {
+			return $string_of_characters;
+		}
+		return self::CHARACTER_SET_KEYBOARD;
+	}
+
+}
+
+$length = isset( $argv[1] ) ? $argv[1] : null;
+$chars = isset( $argv[2] ) ? $argv[2] : null;
+echo RandomStringCreator::generate_random_string( $length, $chars );
