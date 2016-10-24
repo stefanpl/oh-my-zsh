@@ -129,3 +129,4 @@ alias hmax="hall"
 alias -g npme='PATH=$(npm bin):$PATH'
 alias list-printers="lpstat -p -d"
 alias -g wcl="| wc -l"
+alias escswap='/usr/bin/setxkbmap -option "caps:swapescape"'
