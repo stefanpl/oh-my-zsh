@@ -1,0 +1,18 @@
+#!/bin/bash
+# script to print random lines from ~/.zsh_history to STDOUT in an infinite loop
+
+
+# if missfactor is 3, every third attempt to print a line is a success
+missfactor=3
+# sleeptime in seconds
+sleeptime=0.1
+
+
+while [ true ]
+do
+	linecount=$(cat ~/.zsh_history | wc -l)
+	let random_max=$linecount*$missfactor
+	random_number=$(shuf -i 0-$random_max -n 1)
+	cat ~/.zsh_history | sed -n "$random_number"p | perl -p -e 's/^[: 0-9;]*//'
+sleep $sleeptime
+done
