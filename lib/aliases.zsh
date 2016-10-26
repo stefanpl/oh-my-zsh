@@ -65,7 +65,7 @@ alias co="git checkout"
 alias cs="du -sh"
 alias rmf="rm -Rf"
 alias snippets="cd ~/.vim/bundle/snipmate.vim/snippets/"
-alias inst="sudo apt-get install"
+alias inst="sudo apt-get install -y"
 alias tmp="cd /tmp"
 alias sshc="vim ~/.ssh/config"
 alias sshs="cat ~/.ssh/config | egrep \"Host (.*)\" | sort"
@@ -129,3 +129,4 @@ alias hmax="hall"
 alias -g npme='PATH=$(npm bin):$PATH'
 alias list-printers="lpstat -p -d"
 alias -g wcl="| wc -l"
+alias escswap='/usr/bin/setxkbmap -option "caps:swapescape"'
