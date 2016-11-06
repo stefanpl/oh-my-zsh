@@ -54,3 +54,7 @@ download_latest_wordpress() {
 open_in_background() {
 	xdg-open $1 2>/dev/null &
 }
+
+find_files_and_folders() {
+	find . -name "*$1*" 2>/dev/null
+}

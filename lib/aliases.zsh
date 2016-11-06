@@ -130,3 +130,9 @@ alias -g npme='PATH=$(npm bin):$PATH'
 alias list-printers="lpstat -p -d"
 alias -g wcl="| wc -l"
 alias escswap='/usr/bin/setxkbmap -option "caps:swapescape"'
+alias cli_functions="echo type 'clis'"
+alias clis="vim $HOME/.oh-my-zsh/.cli_functions && souce $HOME/.oh-my-zsh/.cli_functions"
+alias fff="echo \"save a letter, type ff\""
+alias ff="find_files_and_folders"
+alias psa="echo 'this is your public service announcement' && ps -aux"
+alias psa="echo 'this is your public service announcement' && ps -aux | head -1 && ps -aux"
