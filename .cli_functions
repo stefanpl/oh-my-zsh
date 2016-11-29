@@ -61,3 +61,7 @@ find_files_and_folders() {
 	fi
 	find . -name "*$1*" 2>/dev/null
 }
+
+count_char_occurences() {
+	echo $1 | grep -o . | sort | uniq -c
+}
