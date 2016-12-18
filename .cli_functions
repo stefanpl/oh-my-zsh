@@ -59,7 +59,7 @@ find_files_and_folders() {
 	if [ "$EUID" -ne 0  ]; then
 		echo "Searching without root privileges. Some results may not be found."
 	fi
-	find . -name "*$1*" 2>/dev/null
+	find . -iname "*$1*" 2>/dev/null
 }
 
 count_char_occurences() {
