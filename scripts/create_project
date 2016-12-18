@@ -1,0 +1,30 @@
+#!/usr/bin/env php
+<?php
+
+require_once __DIR__.'/resources/vendor/autoload.php';
+
+function println($msg)
+{
+    echo $msg . PHP_EOL;
+}
+
+function execAsSudo($command)
+{
+    //TODO: this is not secure
+    // In theory, the tmpFile could be messed with, allowing for code injection
+    $tmpFile = sys_get_temp_dir().'/tmpFileForRunningCommandsAsSudo';
+    file_put_contents($tmpFile, $command);
+    $passwordfile = __DIR__.'/resources/password';
+    exec('sudo -S bash '.$tmpFile.' < '.$passwordfile);
+}
+
+
+$projectName = isset($argv[1]) ? $argv[1] : null;
+if (!$projectName) {
+    println('Please provide a project name as the first script parameter.');
+    die();
+}
+$ignoreExisting = isset($argv[2]) ? array($argv[2]) : array();
+
+$project = new Project($projectName);
+$project->create($ignoreExisting);
