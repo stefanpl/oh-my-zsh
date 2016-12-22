@@ -4,7 +4,9 @@
     "type": "project",
     "require": {
         "phpunit/phpunit": "^4.8",
-        "twig/twig": "^1.29"
+        "twig/twig": "^1.29",
+        "kraken-io/kraken-php": "^1.6",
+        "symfony/yaml": "^3.2"
     },
     "autoload": {
         "psr-4": {"": "src/"}

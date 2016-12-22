@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "f91ff7fb7ba0bcae7db7acf353662e56",
-    "content-hash": "306f52363e935f65c864fcb760a69cda",
+    "hash": "c1e557de5a3bf9328c9ac2c9498afa53",
+    "content-hash": "7c60cc17a6d4564ff15bb2be5fc366f7",
     "packages": [
         {
             "name": "doctrine/instantiator",
@@ -60,6 +60,43 @@
                 "instantiate"
             ],
             "time": "2015-06-14 21:17:01"
+        },
+        {
+            "name": "kraken-io/kraken-php",
+            "version": "1.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kraken-io/kraken-php.git",
+                "reference": "56563df1b9a7829f7039cc6e712cf89fab655e26"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kraken-io/kraken-php/zipball/56563df1b9a7829f7039cc6e712cf89fab655e26",
+                "reference": "56563df1b9a7829f7039cc6e712cf89fab655e26",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "ext-json": "*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Kraken": "lib"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Kraken Image Optimizer",
+                    "email": "support@kraken.io"
+                }
+            ],
+            "description": "Official Kraken.io SDK",
+            "time": "2016-07-26 08:03:24"
         },
         {
             "name": "phpdocumentor/reflection-common",
