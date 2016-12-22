@@ -111,3 +111,6 @@ unset GREP_OPTIONS
 if [ -f /usr/bin/setxkbmap ]; then
 /usr/bin/setxkbmap -option "caps:swapescape"
 fi
+
+#disable middle mouse
+xinput set-button-map 12 1 0 3
