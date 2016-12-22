@@ -1,0 +1,12 @@
+#!/usr/bin/env php
+<?php
+
+require_once __DIR__.'/resources/vendor/autoload.php';
+
+$baseDirectory = $argv[2];
+
+$files = scanForImages($baseDirectory);
+
+KrakenImageOptimizer::optimizeImages($files);
+
+

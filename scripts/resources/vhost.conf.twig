@@ -9,8 +9,8 @@
 	#ServerName www.example.com
 
 	ServerAdmin webmaster@localhost
-	DocumentRoot /home/stefan/webdev/HOSTNAME/
-	ServerName HOSTNAME
+	DocumentRoot {{ docroot }}
+	ServerName {{ domain }}
 
 	# Available loglevels: trace8, ..., trace1, debug, info, notice, warn,
 	# error, crit, alert, emerg.
