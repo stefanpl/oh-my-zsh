@@ -113,4 +113,4 @@ if [ -f /usr/bin/setxkbmap ]; then
 fi
 
 #disable middle mouse
-xinput set-button-map 12 1 0 3
+type xinput > /dev/null && xinput set-button-map 12 1 0 3
