@@ -1,12 +1,86 @@
 #!/usr/bin/env php
 <?php
 
+function println($msg)
+{
+    echo $msg . PHP_EOL;
+}
+
+/**
+ * Scans a directory for image files
+ * @param $directory
+ * @return array of filenames
+ */
+function scanForImages($directory)
+{
+    $directoryIterator = new RecursiveDirectoryIterator($directory);
+    $fileIterator = new RecursiveIteratorIterator($directoryIterator);
+    $regexIterator = new RegexIterator($fileIterator, '/^.+\.(png|jpe?g|gig)$/i', RecursiveRegexIterator::GET_MATCH);
+    $files = array();
+    foreach ($regexIterator as $image) {
+       $files[] = $image[0];
+    }
+    return $files;
+}
+
+function listFilesWithSizes($files)
+{
+    $biggestFileSize = 0;
+    $totalSize = 0;
+    foreach ($files as $file) {
+        $filesizeInKb = filesize($file) / 1000;
+        $totalSize += $filesizeInKb;
+        $biggestFileSize = $filesizeInKb > $biggestFileSize ? $filesizeInKb : $biggestFileSize;
+        println('Going to send '.$filesizeInKb.'Kb image:');
+        println($file);
+    }
+    println('Found '.count($files).' images with a total size of '.round($totalSize/1000, 2).'MB.');
+    println('Biggest file has '.round($biggestFileSize/1000, 2).'MB.');
+    println('Set second argument to true (replace images) or false (prefix images) to krakenize.');
+}
+
 require_once __DIR__.'/resources/vendor/autoload.php';
 
-$baseDirectory = $argv[2];
 
-$files = scanForImages($baseDirectory);
 
-KrakenImageOptimizer::optimizeImages($files);
+if (!isset($argv[1])) {
+    println('Please provide a folder as the first argument');
+    exit(1);
+}
+$baseDirectory = $argv[1];
+if (!is_dir($baseDirectory)) {
+    println('Could not find the provided directory: '.$baseDirectory);
+    exit(1);
+}
+
+$mode = 'dry-run';
+if (isset($argv[2])) {
+    if ($argv[2] !== 'replace' && $argv[2] !== 'prefix') {
+        println('Illegal second argument. Must be set to "replace" or "prefix".');
+        exit(1);
+    }
+    $mode = $argv[2] ? 'replace' : 'prefix';
+}
+
+try {
+    $files = scanForImages($baseDirectory);
+    if ($mode == 'dry-run') {
+        listFilesWithSizes($files);
+        exit(0);
+    }
+    $totalSavings = 0;
+    foreach ($files as $file) {
+        // TODO: set run on 'replace', debug this, sloooowly, file by file!!!
+        $optimized = KrakenImageOptimizer::optimizeImages($file, $mode == 'replace');
+        $savedKb = round($optimized[0]['savings']/1000, 2);
+        $totalSavings += $savedKb;
+        println('Saved '.$savedKb.'Kb: ');
+        println($optimized[0]['file']);
+    }
+    println('Finished optimizing '.count($files).' files. Saved a total of '.$totalSavings.'Kb.');
+} catch (Exception $exception) {
+    println($exception->getMessage());
+    die(1);
+}
 
 
