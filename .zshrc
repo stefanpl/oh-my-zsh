@@ -103,6 +103,9 @@ export PATH=~/node_scripts/.bin/:$PATH
 # add scripts to path
 export PATH=~/.oh-my-zsh/scripts/:$PATH
 
+# add pip installed packages to path
+export PATH=~/.local/bin/:$PATH
+
 # fix grep warning
 alias egrep="/bin/egrep $GREP_OPTIONS"
 unset GREP_OPTIONS
@@ -113,4 +116,5 @@ if [ -f /usr/bin/setxkbmap ]; then
 fi
 
 #disable middle mouse
-type xinput > /dev/null && xinput set-button-map 12 1 0 3
+#  TODO: avoid 'device has no buttons' message
+# type xinput > /dev/null && xinput set-button-map 12 1 0 3
