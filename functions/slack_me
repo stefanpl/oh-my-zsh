@@ -1,0 +1,17 @@
+input=$1	
+if [ -z "$input" ]; then
+	input=$(cat)
+fi
+if [ -z "$input" ]; then
+	echo "Please provide input via stdin or the first parameter"	
+	exit 1
+fi
+if [ -z $slackHookStefan ]; then
+	echo "Please set \$slackHookStefan in ~/.oh-my-zsh/secrets"
+	exit 1
+fi
+data='{"text":"'$input'"}'
+command="curl -g -X POST -H 'Content-type: application/json' \
+	--data '$data' \
+	 $slackHookStefan"
+eval $command
