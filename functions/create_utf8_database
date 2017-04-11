@@ -1,0 +1,30 @@
+tmpfile=/tmp/createdb.sql
+if [ -f "$tmpfile" ]; then
+	echo "File $tmpfile already exists. Exiting."
+	return 1
+fi
+if [ -z "$1" ]; then
+	echo "Provide a database name as the first argument"
+	return 1
+fi
+if [ -z "$2" ]; then
+	echo "No user provided. Grant access only for root?"
+	select yn in "Yes" "No"; do
+	case $yn in
+		Yes ) break;;
+		No ) return 1;;
+	esac
+	done
+fi
+echo "create database $1 character set utf8 collate utf8_general_ci;" >> $tmpfile
+if [ ! -z "$2" ]; then
+	password=$(head /dev/urandom | tr -dc A-Za-z0-9 | head -c 18 ; echo '')
+	echo "Password for user $2 will be $password"
+	echo "create user '$2'@'localhost' identified by '$password';" >> $tmpfile
+	echo "grant all privileges on $1.* to '$2'@'localhost';" >> $tmpfile
+	echo "flush privileges;" >> $tmpfile
+fi
+
+mysql -u root --password < $tmpfile \
+	&& echo "Database $1 created!"
+rm $tmpfile || echo "COULD NOT REMOVE $tmpfile. THIS FILE CONTAINS YOUR PASSWORD. DELETE IT!! SOMETHING MIGHT HAVE GONE WRONG."
