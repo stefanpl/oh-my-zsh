@@ -156,3 +156,4 @@ alias swap-used='free -m gr swap | perl -p -e "s/Swap:[^0-9]+[0-9]+[^0-9]+([0-9]
 alias rap="sudo service apache2 restart"
 alias rng="sudo service nginx restart"
 alias i3c="vim $HOME/.config/i3/config"
+alias print-drucken="lpr"
