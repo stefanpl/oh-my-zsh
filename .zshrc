@@ -88,10 +88,6 @@ export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/g
 bindkey -v
 
 export KEYTIMEOUT=1
-source ~/.oh-my-zsh/.cli_functions
-if [ -f ~/.bash_aliases_private ]; then
-	source ~/.bash_aliases_private
-fi
 bindkey "^R" history-incremental-search-backward
 
 # indicator for vi mode
