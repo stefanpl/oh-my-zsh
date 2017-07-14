@@ -157,3 +157,20 @@ alias rap="sudo service apache2 restart"
 alias rng="sudo service nginx restart"
 alias i3c="vim $HOME/.config/i3/config"
 alias print-drucken="lpr"
+alias idea="vim $HOME/Documents/ideas.txt"
+alias nr="npm run"
+alias laralog="tail -f storage/logs/laravel-$(date +%Y)-$(date +%m)-$(date +%d).log"
+alias dns="sudo vim /etc/NetworkManager/dnsmasq.d/local"
+alias list-packages="aptitude search '~i!~M'"
+alias sv="sudo service"
+# curl head
+alias ch="curl -IL"
+alias doc
+
+# docker commands
+alias doc="docker"
+alias docips='docker inspect -f "{{.Name}} - {{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}" $(docker ps -q) gr -e "- [0-9.]+$"'
+alias docc="docker-compose"
+
+# perl filter
+alias -g pf="| perl -pe"

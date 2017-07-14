@@ -108,7 +108,7 @@ unset GREP_OPTIONS
 
 # swap escape and capslock
 if [ -f /usr/bin/setxkbmap ]; then
-/usr/bin/setxkbmap -option "caps:swapescape"
+# /usr/bin/setxkbmap -option "caps:swapescape"
 fi
 
 #disable middle mouse
