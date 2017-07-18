@@ -165,12 +165,12 @@ alias list-packages="aptitude search '~i!~M'"
 alias sv="sudo service"
 # curl head
 alias ch="curl -IL"
-alias doc
 
 # docker commands
 alias doc="docker"
 alias docips='docker inspect -f "{{.Name}} - {{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}" $(docker ps -q) gr -e "- [0-9.]+$"'
 alias docc="docker-compose"
+alias docce="docker-compose exec"
 
 # perl filter
 alias -g pf="| perl -pe"
