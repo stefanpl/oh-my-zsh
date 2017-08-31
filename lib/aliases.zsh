@@ -174,3 +174,5 @@ alias docce="docker-compose exec"
 
 # perl filter
 alias -g pf="| perl -pe"
+alias tf="tail -f"
+alias gcan="git commit --amend --no-edit"
