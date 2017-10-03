@@ -117,5 +117,3 @@ fi
 #disable middle mouse
 #  TODO: avoid 'device has no buttons' message
 # type xinput > /dev/null && xinput set-button-map 12 1 0 3
-
-touch $HOME/.oh-my-zsh/secrets

@@ -1,5 +1,6 @@
 source ~/.oh-my-zsh/lib/aliases.zsh
-source ~/.oh-my-zsh/secrets
+secretsfile=~/.oh-my-zsh/secrets
+touch $secretsfile && source $secretsfile
 source ~/.oh-my-zsh/.cli_functions
 if [ -f ~/.bash_aliases_private ]; then
 	source ~/.bash_aliases_private
