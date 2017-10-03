@@ -96,6 +96,9 @@ MODE_INDICATOR="%{$fg_bold[red]%}[CMD MODE]%{$reset_color%}"
 # add node_scripts to path
 export PATH=~/node_scripts/.bin/:$PATH
 
+# add composer bin to path
+export PATH=~/.composer/vendor/bin/:$PATH
+
 # add scripts to path
 export PATH=~/.oh-my-zsh/scripts/:$PATH
 
