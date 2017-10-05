@@ -105,6 +105,9 @@ export PATH=~/.oh-my-zsh/scripts/:$PATH
 # add pip installed packages to path
 export PATH=~/.local/bin/:$PATH
 
+# add puppet to path
+export PATH=/opt/puppetlabs/bin:$PATH
+
 # fix grep warning
 alias egrep="/bin/egrep $GREP_OPTIONS"
 unset GREP_OPTIONS
@@ -117,3 +120,6 @@ fi
 #disable middle mouse
 #  TODO: avoid 'device has no buttons' message
 # type xinput > /dev/null && xinput set-button-map 12 1 0 3
+
+# use vim as default editor
+export EDITOR=vim
