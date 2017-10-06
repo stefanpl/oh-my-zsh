@@ -8,3 +8,4 @@ fi
 fpath=( ~/.oh-my-zsh/functions "${fpath[@]}"  )
 autoload -Uz slack_me
 autoload -Uz create_utf8_database
+autoload -Uz watch_and_run_script
