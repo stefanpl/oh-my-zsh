@@ -96,11 +96,17 @@ MODE_INDICATOR="%{$fg_bold[red]%}[CMD MODE]%{$reset_color%}"
 # add node_scripts to path
 export PATH=~/node_scripts/.bin/:$PATH
 
+# add composer bin to path
+export PATH=~/.composer/vendor/bin/:$PATH
+
 # add scripts to path
 export PATH=~/.oh-my-zsh/scripts/:$PATH
 
 # add pip installed packages to path
 export PATH=~/.local/bin/:$PATH
+
+# add puppet to path
+export PATH=/opt/puppetlabs/bin:$PATH
 
 # fix grep warning
 alias egrep="/bin/egrep $GREP_OPTIONS"
@@ -115,4 +121,10 @@ fi
 #  TODO: avoid 'device has no buttons' message
 # type xinput > /dev/null && xinput set-button-map 12 1 0 3
 
-touch $HOME/.oh-my-zsh/secrets
+# use vim as default editor
+export EDITOR=vim
+
+# Use nvm to configure node
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

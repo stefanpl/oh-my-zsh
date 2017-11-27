@@ -25,10 +25,8 @@ else
     alias history='fc -l 1'
 fi
 # List direcory contents
-alias lsa='ls -lah'
 alias l='ls -lAh'
 alias ll='ls -lah'
-alias la='ls -lAh'
 
 alias afind='ack-grep -il'
 
@@ -58,7 +56,7 @@ alias aliases_private="vim ~/.bash_aliases_private ;source ~/.bash_aliases_priva
 alias -g le="| less"
 alias -g gr="| egrep -i"
 alias zshrc="vim ~/.zshrc; source ~/.zshrc"
-alias -g t="tree -L"
+alias t="tree -L"
 alias -g gir="egrep -ir"
 alias git_boilerplate="sh ~/scripts/git_boilerplate.sh"
 alias d="ls -Alh | egrep '^d'"
@@ -176,3 +174,5 @@ alias docce="docker-compose exec"
 alias -g pf="| perl -pe"
 alias tf="tail -f"
 alias gcan="git commit --amend --no-edit"
+alias wrs="watch_and_run_script"
+alias wlr="wlanrestart"
