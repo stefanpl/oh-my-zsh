@@ -2,20 +2,17 @@
 
 # toggle synaptic touchpad on/off
 
-# get current state
+# get id number
 
 
-SYNSTATE=$(synclient -l | grep TouchpadOff | awk '{ print $3 }')
+id=$(xinput list | grep -i touchpad | perl -p -e "s/.*id=([0-9]+).*/\$1/")
 
-# change to other state
-if [ $SYNSTATE = 0 ]; then
-    synclient touchpadoff=1
-    echo "touchpad OFF"
-elif [ $SYNSTATE = 1 ]; then
-    synclient touchpadoff=0
-    echo "touchpad ON"
+enabled=$(xinput --list-props $id | grep -iE "Device Enabled.*:.*1")
+
+if [[ -n $enabled ]]; then
+    echo is enabled. Disable now.
+    xinput --disable $id
 else
-    echo "Couldn't get touchpad status from synclient"
-    exit 1
+    echo is not enabled. Enable now.
+    xinput --enable $id
 fi
-
