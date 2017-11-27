@@ -25,10 +25,8 @@ else
     alias history='fc -l 1'
 fi
 # List direcory contents
-alias lsa='ls -lah'
 alias l='ls -lAh'
 alias ll='ls -lah'
-alias la='ls -lAh'
 
 alias afind='ack-grep -il'
 
@@ -177,3 +175,4 @@ alias -g pf="| perl -pe"
 alias tf="tail -f"
 alias gcan="git commit --amend --no-edit"
 alias wrs="watch_and_run_script"
+alias wlr="wlanrestart"
