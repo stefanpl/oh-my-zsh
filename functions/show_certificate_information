@@ -1,0 +1,5 @@
+if [ -z "$1" ]; then
+	echo "Provide a domain as the first argument"
+	return 1
+fi
+curl --insecure -v https://$1 2>&1 | awk 'BEGIN { cert=0  } /^\* SSL connection/ { cert=1  } /^\*/ { if (cert) print  }'
