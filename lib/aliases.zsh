@@ -34,7 +34,7 @@ alias afind='ack-grep -il'
 # Stefan's aliases
 #########################################
 
-alias wowscreen="sh ~/scripts/wowscreen.sh"
+alias wowscreen="sh ~/.oh-my-zsh/scripts/wowscreen.sh"
 alias kp="keepass2 &"
 alias mkd="makeDirectoryAndGoThere"
 alias h="echo \"use 'c' to go home\""
