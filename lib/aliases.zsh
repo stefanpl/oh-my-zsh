@@ -167,7 +167,7 @@ alias ch="curl -IL"
 # docker commands
 alias doc="docker"
 alias docips='docker inspect -f "{{.Name}} - {{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}" $(docker ps -q) gr -e "- [0-9.]+$"'
-alias docc="docker-compose"
+alias docc="docker container"
 alias docce="docker-compose exec"
 
 # perl filter
@@ -180,3 +180,4 @@ alias list-global-node-modules="npm --version > /dev/null && ls -lh \`npm root -
 alias certinfo="show_certificate_information"
 alias timestamp="date +%s"
 alias ts="timestamp"
+alias ports="netstat -tulpn"
