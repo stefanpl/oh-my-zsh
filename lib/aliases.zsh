@@ -169,6 +169,7 @@ alias doc="docker"
 alias docips='docker inspect -f "{{.Name}} - {{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}" $(docker ps -q) gr -e "- [0-9.]+$"'
 alias docc="docker container"
 alias docce="docker-compose exec"
+alias docid="docker_find_container_id"
 
 # perl filter
 alias -g pf="| perl -pe"

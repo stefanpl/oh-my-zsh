@@ -10,3 +10,4 @@ autoload -Uz slack_me
 autoload -Uz create_utf8_database
 autoload -Uz watch_and_run_script
 autoload -Uz show_certificate_information
+autoload -Uz docker_find_container_id
