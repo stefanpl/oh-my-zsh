@@ -180,5 +180,5 @@ alias list-global-node-modules="npm --version > /dev/null && ls -lh \`npm root -
 alias certinfo="show_ssl_certificate_information"
 alias timestamp="date +%s"
 alias ts="timestamp"
-alias ports="netstat -tulpn"
+alias -g ports="netstat -tulpn"
 alias list-services="ls /etc/init.d"
