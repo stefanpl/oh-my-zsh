@@ -9,7 +9,7 @@
 docker_find_container_ip() {
 
 	if [ -z "$1" ]; then
-		echo "Please provide a matching expression as the first command line argument"
+		echo "Please provide a container-matching expression as the first command line argument"
 		return 1
 	fi
 
