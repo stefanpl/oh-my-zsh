@@ -7,4 +7,3 @@ fi
 for file in ~/.oh-my-zsh/custom-bash-functions/*.sh; do 
     source $file
 done
-echo "executed once"
