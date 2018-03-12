@@ -9,20 +9,8 @@ checkIfUrlIsAvailable() {
 
 # fixes permissions in webdev directory
 fixperms() {
-	sudo chown -R stefan:www-data $1;
 	sudo find $1 -type d -exec chmod 775 {} +;
 	sudo find $1 -type f -exec chmod 664 {} +;
-}
-
-# prefixes a file with a prefix
-prefix_file() {
-	if [ -z "$2" ]
-	then 
-		prefix="_"
-	else
-		prefix=$2
-	fi
-	mv $1 $prefix$1
 }
 
 # make all file in directory lowercase

@@ -1,13 +1,10 @@
+export ZSH_START_MILLISECONDS=$(($(date +%s%N)/1000000)) 
 source ~/.oh-my-zsh/lib/aliases.zsh
-secretsfile=~/.oh-my-zsh/secrets
-touch $secretsfile && source $secretsfile
 source ~/.oh-my-zsh/.cli_functions
-if [ -f ~/.bash_aliases_private ]; then
-	source ~/.bash_aliases_private
+if [ -f ~/.oh-my-zsh/private_aliases.zsh ]; then
+	source ~/.oh-my-zsh/private_aliases.zsh
 fi
-source ~/.oh-my-zsh/custom-bash-functions/*.sh
-fpath=( ~/.oh-my-zsh/functions "${fpath[@]}"  )
-autoload -Uz slack_me
-autoload -Uz create_utf8_database
-autoload -Uz watch_and_run_script
-autoload -Uz docker_find_container_id
+for file in ~/.oh-my-zsh/custom-bash-functions/*.sh; do 
+    source $file
+done
+echo "executed once"

@@ -48,7 +48,6 @@ DISABLE_AUTO_UPDATE="true"
 plugins=(git vi-mode)
 
 source $ZSH/oh-my-zsh.sh
-source $ZSH/.zshenv
 
 # User configuration
 
@@ -128,3 +127,6 @@ export EDITOR=vim
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+endtime=$(($(date +%s%N)/1000000))
+startupTime=$(($endtime-$ZSH_START_MILLISECONDS))
+echo "zsh started in $startupTime milliseconds"
