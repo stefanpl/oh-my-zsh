@@ -12,4 +12,4 @@ password
 secrets
 fontconfig
 nohup.out
-private_aliases.zsh
+aliases_private.zsh
