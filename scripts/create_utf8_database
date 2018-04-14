@@ -1,18 +1,20 @@
+#!/bin/bash
+
 tmpfile=/tmp/createdb.sql
 if [ -f "$tmpfile" ]; then
 	echo "File $tmpfile already exists. Exiting."
-	return 1
+	exit 1
 fi
 if [ -z "$1" ]; then
 	echo "Provide a database name as the first argument"
-	return 1
+	exit 1
 fi
 if [ -z "$2" ]; then
 	echo "No user provided. Grant access only for root?"
 	select yn in "Yes" "No"; do
 	case $yn in
 		Yes ) break;;
-		No ) return 1;;
+		No ) exit 1;;
 	esac
 	done
 fi
