@@ -37,7 +37,7 @@ alias afind='ack-grep -il'
 alias wowscreen="sh ~/.oh-my-zsh/scripts/wowscreen.sh"
 alias kp="keepass2 &"
 alias mkd="makeDirectoryAndGoThere"
-alias h="echo \"use 'c' to go home\""
+alias h="cd $HOME/shortcuts"
 alias s="git status"
 alias rma="sudo rm -Rfv"
 alias keys="sudo subl /usr/share/X11/xkb/symbols/de"
@@ -182,3 +182,11 @@ alias ts="timestamp"
 alias -g ports="netstat -tulpn"
 alias list-services="ls /etc/init.d"
 alias -g cbf="$HOME/.oh-my-zsh/custom-bash-functions"
+
+# shortcuts
+alias -g swf="$HOME/shortcuts/wf"
+alias co="copyq clipboard"
+
+alias grs="git reset HEAD"
+alias cdbg="curl -b XDEBUG_SESSION=PHPSTORM"
+alias installed-packages="sudo dpkg --get-selections | grep -v deinstall"
