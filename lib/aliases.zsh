@@ -1,48 +1,48 @@
-# Push and pop directories on directory stack
+# push and pop directories on directory stack
 alias po='popd'
 
-# Basic directory operations
+# basic directory operations
 alias ...='cd ../..'
 alias -- -='cd -'
 
-# Super user
+# super user
 alias -g _='sudo'
 alias please='sudo'
 
 #alias g='grep -in'
 
-# Show history
-if [ "$HIST_STAMPS" = "mm/dd/yyyy" ]
+# show history
+if [ "$hist_stamps" = "mm/dd/yyyy" ]
 then
     alias history='fc -fl 1'
-elif [ "$HIST_STAMPS" = "dd.mm.yyyy" ]
+elif [ "$hist_stamps" = "dd.mm.yyyy" ]
 then
-    alias history='fc -El 1'
-elif [ "$HIST_STAMPS" = "yyyy-mm-dd" ]
+    alias history='fc -el 1'
+elif [ "$hist_stamps" = "yyyy-mm-dd" ]
 then
     alias history='fc -il 1'
 else
     alias history='fc -l 1'
 fi
-# List direcory contents
-alias l='ls -lAh'
+# list direcory contents
+alias l='ls -lah'
 alias ll='ls -lah'
 
 alias afind='ack-grep -il'
 
 #########################################
-# Stefan's aliases
+# stefan's aliases
 #########################################
 
 alias wowscreen="sh ~/.oh-my-zsh/scripts/wowscreen.sh"
 alias kp="keepass2 &"
-alias mkd="makeDirectoryAndGoThere"
-alias h="cd $HOME/shortcuts"
+alias mkd="makedirectoryandgothere"
+alias h="cd $home/shortcuts"
 alias s="git status"
-alias rma="sudo rm -Rfv"
-alias keys="sudo subl /usr/share/X11/xkb/symbols/de"
+alias rma="sudo rm -rfv"
+alias keys="sudo subl /usr/share/x11/xkb/symbols/de"
 alias tt="toggle_touchpad"
-alias myip="ifconfig | egrep -i \"inet (addr|Adresse):[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+\" -o"
+alias myip="ifconfig | egrep -i \"inet (addr|adresse):[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+\" -o"
 alias dark="keep_screen_off"
 alias vimrc="vim ~/.vimrc"
 alias ..="cd .."
@@ -55,18 +55,18 @@ alias -g le="| less"
 alias -g gr="| egrep -i"
 alias zshrc="vim ~/.zshrc; source ~/.zshrc"
 alias zshenv="vim ~/.zshenv; source ~/.zshenv"
-alias t="tree -L"
+alias t="tree -l"
 alias -g gir="egrep -ir"
 alias git_boilerplate="sh ~/scripts/git_boilerplate.sh"
-alias d="ls -Alh | egrep '^d'"
+alias d="ls -alh | egrep '^d'"
 alias co="git checkout"
 alias cs="du -sh"
-alias rmf="rm -Rf"
+alias rmf="rm -rf"
 alias snippets="cd ~/.vim/bundle/snipmate.vim/snippets/"
 alias inst="sudo apt-get install -y"
 alias tmp="cd /tmp"
 alias sshc="vim ~/.ssh/config"
-alias sshs="cat ~/.ssh/config | egrep \"Host (.*)\" | sort"
+alias sshs="cat ~/.ssh/config | egrep \"host (.*)\" | sort"
 alias e="exit"
 alias c="cd"
 alias b="cd -"
@@ -79,11 +79,11 @@ alias -g onel="alias | egrep -i \"^[a-z]{1}=\""
 alias -g twol="alias | egrep -i \"^[a-z]{2}=\""
 alias -g threel="alias | egrep -i ^[a-z]{3}="
 alias ext="cd /media/stefan"
-alias des="cd ~/Desktop"
-alias -g pv="> /tmp/tempfileToEditPipeStuffWithVim.txt; vim /tmp/tempfileToEditPipeStuffWithVim.txt"
+alias des="cd ~/desktop"
+alias -g pv="> /tmp/tempfiletoeditpipestuffwithvim.txt; vim /tmp/tempfiletoeditpipestuffwithvim.txt"
 alias note="vim ~/notes/newnote.txt"
 alias wlanrestart="sudo service network-manager restart"
-alias desk="cd ~/Desktop"
+alias desk="cd ~/desktop"
 alias -g yy="| tr -d '\n' | xclip -selection c"
 alias -g ya="| xclip -selection c"
 alias gaa="git add --all"
@@ -98,8 +98,8 @@ alias lcf="lowercase_files"
 alias ....="cd ../../../"
 alias tp="htop"
 alias hs="homestead"
-alias wppw="cat wp-config.php gr \"DB_NAME|DB_USER|DB_PASSWORD|DB_HOST\""
-alias t3pw="cat typo3conf/LocalConfiguration.php gr \"'password'|'database'|'username'|'host'\""
+alias wppw="cat wp-config.php gr \"db_name|db_user|db_password|db_host\""
+alias t3pw="cat typo3conf/localconfiguration.php gr \"'password'|'database'|'username'|'host'\""
 alias hst="sudo vim /etc/hosts"
 alias -g .oh="$HOME/.oh-my-zsh"
 alias cdb="create_utf8_database"
@@ -116,11 +116,11 @@ alias -g w="which"
 alias -g lcm="tail -n 2 ~/.zsh_history | head -n 1 | perl -p -e 's/^[0-9: ]*;//'"
 alias -g h100="cat ~/.zsh_history | perl -p -e \"s/^[0-9: ]*;//\" | tail -n 100"
 alias -g hall="cat ~/.zsh_history | perl -p -e \"s/^[0-9: ]*;//\" | sort | uniq -u"
-alias mouseoff='xinput set-prop "TPPS/2 IBM TrackPoint" "Device Enabled" 0 && xinput set-prop "pointer:Lenovo ThinkPad Compact USB Keyboard with TrackPoint" "Device Enabled" 0'
-alias mouseon='xinput set-prop "TPPS/2 IBM TrackPoint" "Device Enabled" 1 && xinput set-prop "pointer:Lenovo ThinkPad Compact USB Keyboard with TrackPoint" "Device Enabled" 1'
+alias mouseoff='xinput set-prop "tpps/2 ibm trackpoint" "device enabled" 0 && xinput set-prop "pointer:lenovo thinkpad compact usb keyboard with trackpoint" "device enabled" 0'
+alias mouseon='xinput set-prop "tpps/2 ibm trackpoint" "device enabled" 1 && xinput set-prop "pointer:lenovo thinkpad compact usb keyboard with trackpoint" "device enabled" 1'
 alias on="mouseon"
 alias hmax="hall"
-alias -g npme='PATH=$(npm bin):$PATH'
+alias -g npme='path=$(npm bin):$path'
 alias list-printers="lpstat -p -d"
 alias -g wcl="| wc -l"
 alias escswap='/usr/bin/setxkbmap -option "caps:swapescape"'
@@ -128,44 +128,45 @@ alias cli_functions="echo type 'clis'"
 alias -g ff="find_files_and_folders"
 alias fff="echo \"save a letter, type ff\""
 alias psa="echo 'this is your public service announcement' && ps -aux | head -1 && ps -aux"
-alias pubip="wget http://ipinfo.io/ip -qO -"
-alias mylog="vim $HOME/documents/writing/mylog-$(date +%Y)-$(date +%m)-$(date +%d)"
+alias pubip="wget http://ipinfo.io/ip -qo -"
+alias mylog="vim $home/documents/writing/mylog-$(date +%y)-$(date +%m)-$(date +%d)"
 alias dot="cd ~/dotfiles"
 alias cco="count_char_occurences"
-alias con="SSH_AUTH_SOCK=0 ssh"
-alias dot="cd $HOME/dotfiles"
-alias scr="cd $HOME/.oh-my-zsh/scripts"
+alias con="ssh_auth_sock=0 ssh"
+alias dot="cd $home/dotfiles"
+alias scr="cd $home/.oh-my-zsh/scripts"
 alias par="php artisan"
 alias parti="php artisan tinker"
-alias vup="pushd $HOME/webdev/devserver-xenial-vagrant && vagrant up && popd"
-alias vhalt="pushd $HOME/webdev/devserver-xenial-vagrant && vagrant halt && popd"
+alias vup="pushd $home/webdev/devserver-xenial-vagrant && vagrant up && popd"
+alias vhalt="pushd $home/webdev/devserver-xenial-vagrant && vagrant halt && popd"
 alias ds="dirs -v"
 alias pud="pushd"
 alias pod="popd"
 alias he="heroku"
 alias about="cat /etc/*release 2>/dev/null"
 alias memory-info="sudo dmidecode -t 17"
-alias swap-used='free -m gr swap | perl -p -e "s/Swap:[^0-9]+[0-9]+[^0-9]+([0-9]+).*/\$1/"'
+alias swap-used='free -m gr swap | perl -p -e "s/swap:[^0-9]+[0-9]+[^0-9]+([0-9]+).*/\$1/"'
 alias rap="sudo service apache2 restart"
 alias rng="sudo service nginx restart"
-alias i3c="vim $HOME/.config/i3/config"
+alias i3c="vim $home/.config/i3/config"
 alias print-drucken="lpr"
-alias idea="vim $HOME/Documents/ideas.txt"
+alias idea="vim $home/documents/ideas.txt"
 alias nr="npm run"
-alias laralog="tail -f storage/logs/laravel-$(date +%Y)-$(date +%m)-$(date +%d).log"
-alias dns="sudo vim /etc/NetworkManager/dnsmasq.d/local"
-alias list-packages="aptitude search '~i!~M'"
+alias laralog="tail -f storage/logs/laravel-$(date +%y)-$(date +%m)-$(date +%d).log"
+alias dns="sudo vim /etc/networkmanager/dnsmasq.d/local"
+alias list-packages="aptitude search '~i!~m'"
 alias sv="sudo service"
 # curl head
-alias ch="curl -IL"
+alias ch="curl -il"
 
 # docker commands
 alias doc="docker"
-alias docips='docker inspect -f "{{.Name}} - {{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}" $(docker ps -q) gr -e "- [0-9.]+$"'
+alias docips='docker inspect -f "{{.name}} - {{range .networksettings.networks}}{{.ipaddress}}{{end}}" $(docker ps -q) gr -e "- [0-9.]+$"'
 alias docc="docker container"
 alias docce="docker-compose exec"
 alias docid="docker_find_container_id"
 alias docfi="docker_edit_container_file"
+alias docb="docker_interactive_bash"
 
 # perl filter
 alias -g pf="| perl -pe"
