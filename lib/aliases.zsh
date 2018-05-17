@@ -157,7 +157,7 @@ alias dns="sudo vim /etc/networkmanager/dnsmasq.d/local"
 alias list-packages="aptitude search '~i!~m'"
 alias sv="sudo service"
 # curl head
-alias ch="curl -il"
+alias ch="curl -IL"
 
 # docker commands
 alias doc="docker"
