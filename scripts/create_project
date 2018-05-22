@@ -1,30 +1,26 @@
-#!/usr/bin/env php
-<?php
-
-require_once __DIR__.'/resources/vendor/autoload.php';
-
-function println($msg)
-{
-    echo $msg . PHP_EOL;
-}
-
-function execAsSudo($command)
-{
-    //TODO: this is not secure
-    // In theory, the tmpFile could be messed with, allowing for code injection
-    $tmpFile = sys_get_temp_dir().'/tmpFileForRunningCommandsAsSudo';
-    file_put_contents($tmpFile, $command);
-    $passwordfile = __DIR__.'/resources/password';
-    exec('sudo -S bash '.$tmpFile.' < '.$passwordfile);
-}
+#!/bin/bash
 
 
-$projectName = isset($argv[1]) ? $argv[1] : null;
-if (!$projectName) {
-    println('Please provide a project name as the first script parameter.');
-    die();
-}
-$ignoreExisting = isset($argv[2]) ? array($argv[2]) : array();
+if [ -z "$1" ]; then
+	echo "Provide a list of tags (__tags__cool__likeeff__even-with-spaces__example__overandout) as the first argument"
+	exit 1
+fi
+listOfTags=$1
 
-$project = new Project($projectName);
-$project->create($ignoreExisting);
+directoryForCode=~/webdev/${listOfTags}
+mkdir $directoryForCode || exit $?
+cd $directoryForCode
+
+git init || exit $?
+ignorefile=".gitignore"
+echo "node_modules" > ./${ignorefile}
+echo "public/" > ./${ignorefile}
+echo ".idea" > ./${ignorefile}
+git commit --all
+git commit -m ".gitignore file filled with various typical values"
+
+directoryForNotes=~/projects/${listOfTags} 
+mkdir $directoryForNotes || exit $?
+cd $directoryForNotes
+touch ~/secrets/zugangsdaten/${listOfTags}
+ln -s ~/secrets/zugangsdaten/${listOfTags} zugangsdaten
