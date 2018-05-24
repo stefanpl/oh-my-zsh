@@ -6,7 +6,7 @@
 # @param $1 – the string which matches a container
 #
 ###
-docker_bash_interactive() {
+docker_interactive_bash() {
 
 	if [ -z "$1" ]; then
 		echo "Please provide a container-matching expression as the first command line argument"
