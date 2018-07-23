@@ -111,11 +111,6 @@ export PATH=/opt/puppetlabs/bin:$PATH
 alias egrep="/bin/egrep $GREP_OPTIONS"
 unset GREP_OPTIONS
 
-# swap escape and capslock
-if [ -f /usr/bin/setxkbmap ]; then
-# /usr/bin/setxkbmap -option "caps:swapescape"
-fi
-
 #disable middle mouse
 #  TODO: avoid 'device has no buttons' message
 # type xinput > /dev/null && xinput set-button-map 12 1 0 3
