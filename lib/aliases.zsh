@@ -36,7 +36,7 @@ alias afind='ack-grep -il'
 
 alias wowscreen="sh ~/.oh-my-zsh/scripts/wowscreen.sh"
 alias kp="keepass2 &"
-alias mkd="makedirectoryandgothere"
+alias mkd="make_directory_and_go_there"
 alias h="cd $HOME/shortcuts"
 alias s="git status"
 alias rma="sudo rm -rfv"

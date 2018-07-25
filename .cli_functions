@@ -1,7 +1,3 @@
-# creates a directory and cd-s into it right after
-makeDirectoryAndGoThere() {
-	mkdir $1 && cd $_
-}
 # checks if a certain URL is not registered as a .com adress
 checkIfUrlIsAvailable() {
 	whois $1 | egrep -i "no match"
