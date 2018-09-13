@@ -5,6 +5,10 @@ export ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
+if [ ! -f ${ZSH}/themes/spaceship.zsh-theme ]; then
+	ln -s ${ZSH}/themes/spaceship-prompt/spaceship.zsh-theme ${ZSH}/themes
+fi
+
 ZSH_THEME="spaceship"
 SPACESHIP_TIME_SHOW=true
 SPACESHIP_VI_MODE_NORMAL="_CMD_"
