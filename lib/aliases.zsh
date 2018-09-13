@@ -207,4 +207,4 @@ alias tcaps="toggle_capslock_behavior"
 alias adjust_number_of_workspaces="gsettings set org.mate.Marco.general num-workspaces"
 alias gski="git stash --keep-index"
 alias to="toggle_capslock_behavior && toggle_touchpad"
-alias tconf="$EDITOR $HOME/.tmux.conf"
+alias tconf='$EDITOR $HOME/.tmux.conf'

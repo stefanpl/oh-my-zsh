@@ -7,6 +7,8 @@ export ZSH=$HOME/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 ZSH_THEME="spaceship"
 SPACESHIP_TIME_SHOW=true
+SPACESHIP_VI_MODE_NORMAL="_CMD_"
+SPACESHIP_VI_MODE_INSERT="»ins»"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
