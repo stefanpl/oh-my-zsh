@@ -167,7 +167,7 @@ alias docse="docker service"
 alias docce="docker-compose exec"
 alias docid="docker_find_container_id"
 alias docfi="docker_edit_container_file"
-alias docb="docker_interactive_bash"
+alias doce="docker_execute_interactive"
 
 # perl filter
 alias -g pf="| perl -pe"

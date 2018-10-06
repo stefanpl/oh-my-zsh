@@ -6,7 +6,7 @@
 # @param $1 – the string which matches a container
 #
 ###
-docker_interactive_bash() {
+docker_execute_interactive() {
 
 	if [ -z "$1" ]; then
 		echo "Please provide a container-matching expression as the first command line argument"
@@ -21,6 +21,18 @@ docker_interactive_bash() {
         return 1
     fi
 
-    docker exec -ti ${dockerId} bash
+	# Using the shift builtin will shift down all params by one.
+	# $3 becomes $2, $2 becomes $1
+	# This enables us to get all remaining arguments by calling ${*}
+	shift
+	if [ -z "$1" ]; then
+		echo "No command given. Running 'bash' inside container ${dockerId}."
+		command=bash
+	else
+		command=${*}
+	fi
+
+	finalCommand="docker exec -ti ${dockerId} ${command}"
+	eval ${finalCommand}
 
 }
