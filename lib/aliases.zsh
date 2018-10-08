@@ -168,6 +168,8 @@ alias docce="docker-compose exec"
 alias docid="docker_find_container_id"
 alias docfi="docker_edit_container_file"
 alias doce="docker_execute_interactive"
+# docker restart service
+alias docrs="docker_restart_service"
 
 # perl filter
 alias -g pf="| perl -pe"
