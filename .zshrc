@@ -1,6 +1,9 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
+# use vim as default editor
+export EDITOR=vim
+
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
@@ -121,9 +124,6 @@ unset GREP_OPTIONS
 #disable middle mouse
 #  TODO: avoid 'device has no buttons' message
 # type xinput > /dev/null && xinput set-button-map 12 1 0 3
-
-# use vim as default editor
-export EDITOR=vim
 
 # Use nvm to configure node
 export NVM_DIR="$HOME/.nvm"

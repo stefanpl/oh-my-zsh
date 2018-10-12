@@ -212,4 +212,4 @@ alias tconf='$EDITOR $HOME/.tmux.conf'
 alias chx="chmod +x"
 alias exs="doce server"
 alias exw="doce workspace"
-alias txc="$EDITOR ~/.tmux.conf"
+alias txc="$EDITOR ~/.tmux.conf && tmux source-file ~/.tmux.conf"
