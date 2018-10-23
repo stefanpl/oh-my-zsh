@@ -12,4 +12,6 @@ if [ -d ${bashUtilsDirectory} ]; then
 	for file in ${bashUtilsDirectory}/*.sh; do 
 		source $file
 	done
+else
+	echo "No bash utils loaded. Functionality might be impaired. Check .zshenv for details."
 fi
