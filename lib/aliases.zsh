@@ -182,7 +182,6 @@ alias timestamp="date +%s"
 alias ts="timestamp"
 alias -g ports="netstat -tulpn"
 alias list-services="ls /etc/init.d"
-alias -g cbf="$HOME/.oh-my-zsh/custom-bash-functions"
 
 # shortcuts
 alias -g swf="$HOME/shortcuts/wf"
