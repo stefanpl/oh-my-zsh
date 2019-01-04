@@ -16,6 +16,10 @@ if [ -f ${ZSH}/themes/spaceship.zsh-theme ]; then
 	SPACESHIP_VI_MODE_INSERT="»ins»"
 fi
 
+if [ -x /usr/bin/numlockx  ]; then
+	/usr/bin/numlockx on
+fi
+
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
