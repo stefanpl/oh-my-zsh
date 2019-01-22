@@ -163,8 +163,10 @@ alias docips='docker inspect -f "{{.name}} - {{range .networksettings.networks}}
 alias docc="docker container"
 alias docse="docker service"
 alias dsl="docker service ls"
+alias dslogs="docker service logs --follow --timestamps"
 alias docce="docker-compose exec"
 alias docid="docker_find_container_id"
+alias docsid="docker_find_service_id"
 alias docfi="docker_edit_container_file"
 alias doce="docker_execute_interactive"
 # docker restart service
