@@ -19,12 +19,12 @@ function loadBashUtils() {
 			source $file
 		done
 	else
-		echo "No bash utils could be found at ${BASH_UTILS_LOCATION}. Please adjust the value of BASH_UTILS_LOCATION in your .env file or clone the bash utils repo."
+		echo "No bash utils could be found at ${BASH_UTILS_LOCATION}. Please adjust the value of BASH_UTILS_LOCATION in your .env file or clone the bash utils repo." > /dev/stderr
 	fi
 }
 
 if [ -z "$BASH_UTILS_LOCATION"  ]; then
-	echo "No value found for BASH_UTILS_LOCATION. Please set it in your .env file."
+	echo "No value found for BASH_UTILS_LOCATION. Please set it in your .env file." > /dev/stderr
 else
 	loadBashUtils
 fi
