@@ -4,14 +4,29 @@ if [ -f ~/.oh-my-zsh/aliases_private.zsh ]; then
 	source ~/.oh-my-zsh/aliases_private.zsh
 fi
 
-bashUtilsDirectory=~/webdev/bash-utils/utils
-if [ -d ${bashUtilsDirectory} ]; then
-	for file in ${bashUtilsDirectory}/**/*.sh; do 
-		source $file
-	done
-	for file in ${bashUtilsDirectory}/*.sh; do 
-		source $file
-	done
-else
-	echo "No bash utils loaded. Functionality might be impaired. Check .zshenv for details."
+if [ ! -f ~/.oh-my-zsh/.env ]; then
+	cp ~/.oh-my-zsh/.env.example ~/.oh-my-zsh/.env
 fi
+
+source ~/.oh-my-zsh/.env
+
+function loadBashUtils() {
+	if [ -d ${BASH_UTILS_LOCATION} ]; then
+		for file in ${BASH_UTILS_LOCATION}/utils/**/*.sh; do 
+			source $file
+		done
+		for file in ${BASH_UTILS_LOCATION}/utils/*.sh; do 
+			source $file
+		done
+	else
+		echo "No bash utils could be found at ${BASH_UTILS_LOCATION}. Please adjust the value of BASH_UTILS_LOCATION in your .env file or clone the bash utils repo."
+	fi
+}
+
+if [ -z "$BASH_UTILS_LOCATION"  ]; then
+	echo "No value found for BASH_UTILS_LOCATION. Please set it in your .env file."
+else
+	loadBashUtils
+fi
+
+
