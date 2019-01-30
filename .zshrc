@@ -131,9 +131,15 @@ unset GREP_OPTIONS
 
 # Use nvm to configure node
 export NVM_DIR="$HOME/.nvm"
-endtime=$(($(date +%s%N)/1000000))
-startupTime=$(($endtime-$ZSH_START_MILLISECONDS))
-echo "zsh started in $startupTime milliseconds"
+if [ ! -f ~/.zshenv ]; then
+	ln -s ~/.oh-my-zsh/.zshenv ~/.zshenv
+	source ~/.zshenv
+fi
+if [ ! -z ${ZSH_START_MILLISECONDS} ]; then
+	endtime=$(($(date +%s%N)/1000000))
+	startupTime=$(($endtime-$ZSH_START_MILLISECONDS))
+	echo "zsh started in $startupTime milliseconds"
+fi
 ###-begin-pm2-completion-###
 ### credits to npm for the completion file model
 #
