@@ -12,10 +12,10 @@ source ~/.oh-my-zsh/.env
 
 function loadBashUtils() {
 	if [ -d ${BASH_UTILS_LOCATION} ]; then
-		for file in ${BASH_UTILS_LOCATION}/utils/**/*.sh; do 
+		for file in ${BASH_UTILS_LOCATION}/**/*.sh; do 
 			source $file
 		done
-		for file in ${BASH_UTILS_LOCATION}/utils/*.sh; do 
+		for file in ${BASH_UTILS_LOCATION}/*.sh; do 
 			source $file
 		done
 	else
