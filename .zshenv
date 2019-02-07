@@ -1,16 +1,24 @@
 export ZSH_START_MILLISECONDS=$(($(date +%s%N)/1000000)) 
-source ~/.oh-my-zsh/lib/aliases.zsh
-if [ -f ~/.oh-my-zsh/aliases_private.zsh ]; then
-	source ~/.oh-my-zsh/aliases_private.zsh
-fi
 
-if [ ! -f ~/.oh-my-zsh/.env ]; then
-	cp ~/.oh-my-zsh/.env.example ~/.oh-my-zsh/.env
-fi
+function sourceAliases() {
+	source ~/.oh-my-zsh/lib/aliases.zsh
+	if [ -f ~/.oh-my-zsh/aliases_private.zsh ]; then
+		source ~/.oh-my-zsh/aliases_private.zsh
+	fi
+}
 
-source ~/.oh-my-zsh/.env
+function sourceEnvFile() {
+	if [ ! -f ~/.oh-my-zsh/.env ]; then
+		cp ~/.oh-my-zsh/.env.example ~/.oh-my-zsh/.env
+	fi
+	source ~/.oh-my-zsh/.env
+}
 
 function loadBashUtils() {
+	if [ -z "$BASH_UTILS_LOCATION"  ]; then
+		echo "No value found for BASH_UTILS_LOCATION. Please set it in your .env file." > /dev/stderr
+		return 1
+	fi
 	if [ -d ${BASH_UTILS_LOCATION} ]; then
 		for file in ${BASH_UTILS_LOCATION}/**/*.sh; do 
 			source $file
@@ -23,10 +31,7 @@ function loadBashUtils() {
 	fi
 }
 
-if [ -z "$BASH_UTILS_LOCATION"  ]; then
-	echo "No value found for BASH_UTILS_LOCATION. Please set it in your .env file." > /dev/stderr
-else
-	loadBashUtils
-fi
-
+sourceEnvFile
+sourceAliases
+loadBashUtils
 
