@@ -161,6 +161,7 @@ alias ch="curl -IL"
 alias doc="docker"
 alias docips='docker inspect -f "{{.name}} - {{range .networksettings.networks}}{{.ipaddress}}{{end}}" $(docker ps -q) gr -e "- [0-9.]+$"'
 alias docc="docker container"
+alias dcl="docker container ls"
 alias docse="docker service"
 alias dsl="docker service ls"
 alias dslogs="docker service logs --follow --timestamps"
