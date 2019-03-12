@@ -1,5 +1,7 @@
 export ZSH_START_MILLISECONDS=$(($(date +%s%N)/1000000)) 
 
+export EDITOR=vim
+
 function sourceAliases() {
 	source ~/.oh-my-zsh/lib/aliases.zsh
 	if [ -f ~/.oh-my-zsh/aliases_private.zsh ]; then
