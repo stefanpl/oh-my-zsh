@@ -158,7 +158,7 @@ alias ch="curl -IL"
 
 # docker commands
 alias doc="docker"
-alias docips='docker inspect -f "{{.name}} - {{range .networksettings.networks}}{{.ipaddress}}{{end}}" $(docker ps -q) gr -e "- [0-9.]+$"'
+alias docip="docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}'"
 alias docc="docker container"
 alias dcl="docker container ls"
 alias dclf="docker container ls --no-trunc"
@@ -248,3 +248,5 @@ alias np="lnv && npm"
 alias nx="lnv && npx"
 alias t="tmux"
 alias p2="lnv && pm2"
+alias doco="docker-compose"
+alias tls="tmux list-sessions"
