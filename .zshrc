@@ -129,8 +129,6 @@ unset GREP_OPTIONS
 #  TODO: avoid 'device has no buttons' message
 # type xinput > /dev/null && xinput set-button-map 12 1 0 3
 
-# Use nvm to configure node
-export NVM_DIR="$HOME/.nvm"
 if [ ! -f ~/.zshenv ]; then
 	ln -s ~/.oh-my-zsh/.zshenv ~/.zshenv
 	source ~/.zshenv
