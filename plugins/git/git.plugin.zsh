@@ -49,7 +49,6 @@ compdef _git gba=git-branch
 alias gbr='git branch --remote'
 alias gcount='git shortlog -sn'
 compdef gcount=git
-alias gcl='git config --list'
 alias gcp='git cherry-pick'
 compdef _git gcp=git-cherry-pick
 alias glg='git log --stat --max-count=10'
