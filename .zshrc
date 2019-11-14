@@ -111,6 +111,8 @@ export PATH=~/node_scripts/.bin/:$PATH
 
 # add composer bin to path
 export PATH=~/.composer/vendor/bin/:$PATH
+# global composer packages
+export PATH=~/.config/composer/vendor/bin/:$PATH
 
 # add scripts to path
 export PATH=~/.oh-my-zsh/scripts/:$PATH
