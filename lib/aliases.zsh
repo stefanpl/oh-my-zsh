@@ -248,6 +248,7 @@ alias pml="pm2 list"
 alias rle="readlink -e"
 alias launch-tmux-terminal='exportDbusVariables && terminator --title="tmux terminal" --profile="Tmux Forever"'
 alias np="lnv && npm"
+alias npr="lnv && npm run"
 alias nx="lnv && npx"
 alias t="tmux"
 alias p2="lnv && pm2"
