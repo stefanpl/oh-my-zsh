@@ -19,5 +19,5 @@ function sourceEnvFile() {
 
 sourceEnvFile
 sourceAliases
-source ${BASH_UTILS_LOCATION}/bootstrap.sh
+${BASH_UTILS_LOCATION}/bootstrap.sh
 
