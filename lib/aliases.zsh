@@ -261,3 +261,7 @@ alias gsp="git stash pop"
 alias gst="git stash"
 alias gstl="git stash list"
 alias cte="crontab -e"
+alias -g hlp="--help"
+alias nx="loadNvm && npx"
+alias doma="docker-machine"
+
