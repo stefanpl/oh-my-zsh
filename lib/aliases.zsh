@@ -264,4 +264,5 @@ alias cte="crontab -e"
 alias -g hlp="--help"
 alias nx="loadNvm && npx"
 alias doma="docker-machine"
+alias display-manager-restart="sudo systemctl restart display-manager"
 
