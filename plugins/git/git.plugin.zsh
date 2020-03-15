@@ -1,8 +1,6 @@
 # Aliases
 alias g='git'
 compdef g=git
-alias gst='git status'
-compdef _git gst=git-status
 alias gdc='git diff --cached'
 compdef _git gdc=git-diff
 alias gdt='git diff-tree --no-commit-id --name-only -r'

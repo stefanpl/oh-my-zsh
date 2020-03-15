@@ -65,7 +65,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games/:$PATH"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
@@ -111,6 +111,8 @@ export PATH=~/node_scripts/.bin/:$PATH
 
 # add composer bin to path
 export PATH=~/.composer/vendor/bin/:$PATH
+# global composer packages
+export PATH=~/.config/composer/vendor/bin/:$PATH
 
 # add scripts to path
 export PATH=~/.oh-my-zsh/scripts/:$PATH
