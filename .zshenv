@@ -1,5 +1,3 @@
-export ZSH_START_MILLISECONDS=$(($(date +%s%N)/1000000)) 
-
 export EDITOR=vim
 
 function sourceAliases() {
