@@ -14,15 +14,15 @@ alias please='sudo'
 # show history
 if [ "$hist_stamps" = "mm/dd/yyyy" ]
 then
-    alias history='fc -fl 1'
+  alias history='fc -fl 1'
 elif [ "$hist_stamps" = "dd.mm.yyyy" ]
 then
-    alias history='fc -el 1'
+  alias history='fc -el 1'
 elif [ "$hist_stamps" = "yyyy-mm-dd" ]
 then
-    alias history='fc -il 1'
+  alias history='fc -il 1'
 else
-    alias history='fc -l 1'
+  alias history='fc -l 1'
 fi
 # list direcory contents
 alias l='ls -lah'
@@ -273,6 +273,12 @@ alias nv="loadNvm && nvm"
 alias hip="getHipsumText"
 alias hrt="echo ❤ yy && logSuccess 'Copied ❤ to clipboard!'"
 alias chk="echo ✓ yy && logSuccess 'Copied ✓ to clipboard!'"
+alias rkt="echo 🚀 yy && logSuccess 'Copied 🚀 to clipboard!'"
+alias mcl="echo 💪 yy && logSuccess 'Copied 💪 to clipboard!'"
+alias aps="echo ’ yy && logSuccess 'Copied ’ to clipboard!'"
+alias apostrophe="aps"
+alias utf8-muscle="mcl"
+alias uft8-rocket="rkt"
 alias uft8-heart="hrt"
 alias uft8-checkmark="chk"
 alias lowercaseFiles="rename 's/(.*)/\\L\$1/' *"
