@@ -8,7 +8,7 @@ export EDITOR=vim
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="maran"
+ZSH_THEME=""
 if [ -f ${ZSH}/themes/spaceship.zsh-theme ]; then
 	ZSH_THEME="spaceship"
 	SPACESHIP_TIME_SHOW=true
@@ -180,3 +180,6 @@ bindkey "^?" backward-delete-char
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
+fpath+=('/home/stefan/.nvm/versions/node/v12.13.0/lib/node_modules/pure-prompt/functions')
+autoload -U promptinit; promptinit
+prompt pure
