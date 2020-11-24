@@ -178,7 +178,7 @@ fi
 bindkey "^?" backward-delete-char
 
 export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
+command -v rbenv && eval "$(rbenv init -)"
 
 fpath+=('/home/stefan/.nvm/versions/node/v12.13.0/lib/node_modules/pure-prompt/functions')
 autoload -U promptinit; promptinit
