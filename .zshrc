@@ -1,6 +1,20 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
+if echo $OSTYPE | grep darwin >/dev/null; then
+  export IS_MACOS=true
+fi
+
+if [ -z "${IS_MACOS}" ]; then
+  readlinkCmd=readlink
+else
+  if ! command -v greadlink >/dev/null; then
+    echo "coreutils not installed. Try running 'brew install coreutils'." >/dev/stderr
+  else
+    readlinkCmd=greadlink
+  fi
+fi
+
 # use vim as default editor
 export EDITOR=vim
 
@@ -16,10 +30,9 @@ if [ -f ${ZSH}/themes/spaceship.zsh-theme ]; then
 	SPACESHIP_VI_MODE_INSERT="»ins»"
 fi
 
-if [ -x /usr/bin/numlockx  ]; then
-	/usr/bin/numlockx on
+if [ -x /usr/bin/numlockx ]; then
+  /usr/bin/numlockx on
 fi
-
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -132,8 +145,8 @@ unset GREP_OPTIONS
 # type xinput > /dev/null && xinput set-button-map 12 1 0 3
 
 if [ ! -f ~/.zshenv ]; then
-	ln -s ~/.oh-my-zsh/.zshenv ~/.zshenv
-	source ~/.zshenv
+  ln -s ~/.oh-my-zsh/.zshenv ~/.zshenv
+  source ~/.zshenv
 fi
 ###-begin-pm2-completion-###
 ### credits to npm for the completion file model
@@ -146,18 +159,18 @@ COMP_WORDBREAKS=${COMP_WORDBREAKS/@/}
 export COMP_WORDBREAKS
 
 if type complete &>/dev/null; then
-  _pm2_completion () {
+  _pm2_completion() {
     local si="$IFS"
     IFS=$'\n' COMPREPLY=($(COMP_CWORD="$COMP_CWORD" \
-                           COMP_LINE="$COMP_LINE" \
-                           COMP_POINT="$COMP_POINT" \
-                           pm2 completion -- "${COMP_WORDS[@]}" \
-                           2>/dev/null)) || return $?
+      COMP_LINE="$COMP_LINE" \
+      COMP_POINT="$COMP_POINT" \
+      pm2 completion -- "${COMP_WORDS[@]}" \
+      2>/dev/null)) || return $?
     IFS="$si"
   }
   complete -o default -F _pm2_completion pm2
 elif type compctl &>/dev/null; then
-  _pm2_completion () {
+  _pm2_completion() {
     local cword line point words si
     read -Ac words
     read -cn cword
@@ -166,10 +179,10 @@ elif type compctl &>/dev/null; then
     read -ln point
     si="$IFS"
     IFS=$'\n' reply=($(COMP_CWORD="$cword" \
-                       COMP_LINE="$line" \
-                       COMP_POINT="$point" \
-                       pm2 completion -- "${words[@]}" \
-                       2>/dev/null)) || return $?
+      COMP_LINE="$line" \
+      COMP_POINT="$point" \
+      pm2 completion -- "${words[@]}" \
+      2>/dev/null)) || return $?
     IFS="$si"
   }
   compctl -K _pm2_completion + -f + pm2
@@ -178,8 +191,4 @@ fi
 bindkey "^?" backward-delete-char
 
 export PATH="$HOME/.rbenv/bin:$PATH"
-command -v rbenv > /dev/null && eval "$(rbenv init -)"
-
-fpath+=('/home/stefan/.nvm/versions/node/v12.13.0/lib/node_modules/pure-prompt/functions')
-autoload -U promptinit; promptinit
-prompt pure
+command -v rbenv >/dev/null && eval "$(rbenv init -)"
