@@ -186,7 +186,7 @@ alias list-global-node-modules="npm list -g --depth=0"
 alias certinfo="showSslCertificateInformation"
 alias timestamp="date +%s"
 alias ts="timestamp"
-alias -g ports="netstat -tulpn"
+alias -g ports="sudo netstat -tulpn"
 alias list-services="ls /etc/init.d"
 
 # shortcuts
