@@ -7,7 +7,9 @@ fi
 
 if [ -z "${IS_MACOS}" ]; then
   readlinkCmd=readlink
+  copyClipboardCmd="xclip -selection c"
 else
+  copyClipboardCmd="pbcopy"
   if ! command -v greadlink >/dev/null; then
     echo "coreutils not installed. Try running 'brew install coreutils'." >/dev/stderr
   else
@@ -23,7 +25,7 @@ export EDITOR=vim
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 ZSH_THEME=""
-if [ -f ${ZSH}/themes/spaceship.zsh-theme ]; then
+if [ -f ${ZSH}/custom/themes/spaceship.zsh-theme ]; then
 	ZSH_THEME="spaceship"
 	SPACESHIP_TIME_SHOW=true
 	SPACESHIP_VI_MODE_NORMAL="_CMD_"

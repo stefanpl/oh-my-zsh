@@ -1,5 +1,3 @@
-export EDITOR=vim
-
 function sourceAliases() {
 	source ~/.oh-my-zsh/lib/aliases.zsh
 	if [ -f ~/.oh-my-zsh/aliases_private.zsh ]; then
