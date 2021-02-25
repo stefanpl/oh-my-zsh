@@ -301,3 +301,5 @@ alias basv="${VISUAL} ${BASH_UTILS_LOCATION}"
 alias bas="cd ${BASH_UTILS_LOCATION}"
 alias http-server-catchall='npx http-server --proxy "http://localhost:8080?"'
 alias gca="git commit --amend"
+alias gpnv="git push --no-verify"
+alias fix-missing-xcrun="xcode-select --install"
