@@ -24,13 +24,13 @@ export EDITOR=vim
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME=""
 if [ -f ${ZSH}/custom/themes/spaceship.zsh-theme ]; then
 	ZSH_THEME="spaceship"
 	SPACESHIP_TIME_SHOW=true
 	SPACESHIP_VI_MODE_NORMAL="_CMD_"
 	SPACESHIP_VI_MODE_INSERT="»ins»"
 fi
+ZSH_THEME="darkblood"
 
 if [ -x /usr/bin/numlockx ]; then
   /usr/bin/numlockx on
