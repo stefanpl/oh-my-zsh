@@ -333,4 +333,8 @@ alias gpgl="git-push-to-new-gitlab"
 alias pt="poetry"
 alias ptr="poetry run"
 alias pts="poetry shell"
-alias py="python"
+if [ -z "${PYTHON_GLOBAL_PATH}" ]; then
+  alias py="python"
+else
+  alias py="${PYTHON_GLOBAL_PATH}"
+fi
