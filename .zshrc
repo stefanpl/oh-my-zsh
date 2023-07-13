@@ -25,10 +25,10 @@ export EDITOR=vim
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 if [ -f ${ZSH}/custom/themes/spaceship.zsh-theme ]; then
-	ZSH_THEME="spaceship"
-	SPACESHIP_TIME_SHOW=true
-	SPACESHIP_VI_MODE_NORMAL="_CMD_"
-	SPACESHIP_VI_MODE_INSERT="»ins»"
+  ZSH_THEME="spaceship"
+  SPACESHIP_TIME_SHOW=true
+  SPACESHIP_VI_MODE_NORMAL="_CMD_"
+  SPACESHIP_VI_MODE_INSERT="»ins»"
 fi
 ZSH_THEME="darkblood"
 
@@ -150,6 +150,7 @@ if [ ! -f ~/.zshenv ]; then
   ln -s ~/.oh-my-zsh/.zshenv ~/.zshenv
   source ~/.zshenv
 fi
+
 ###-begin-pm2-completion-###
 ### credits to npm for the completion file model
 #

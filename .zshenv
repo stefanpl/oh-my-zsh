@@ -12,8 +12,6 @@ function sourceEnvFile() {
 	source ~/.oh-my-zsh/.env
 }
 
-
 sourceEnvFile
 sourceAliases
-source ${BASH_UTILS_LOCATION}/bootstrap.sh
-
+source ${NWON_SHELL_TOOLBOX_LOCATION}/bootstrap.sh
