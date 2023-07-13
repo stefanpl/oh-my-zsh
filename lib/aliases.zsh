@@ -106,6 +106,7 @@ alias dbs="echo \"show databases\" > /tmp/mysqlcommand.sql && mysql -u root --pa
 alias gsubs="git submodule update --init --recursive"
 alias dlwp="download_lastest_wordpress"
 alias pig="ping google.de"
+alias youtube-dl="yt-dlp"
 alias ydl="youtube-dl -x --audio-format mp3 --no-playlist"
 alias k="sudo killall"
 alias grubconfig="sudo ${VISUAL} /etc/default/grub && sudo update-grub"
