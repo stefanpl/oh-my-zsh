@@ -30,7 +30,7 @@ if [ -f ${ZSH}/custom/themes/spaceship.zsh-theme ]; then
   SPACESHIP_VI_MODE_NORMAL="_CMD_"
   SPACESHIP_VI_MODE_INSERT="»ins»"
 fi
-ZSH_THEME="darkblood"
+ZSH_THEME="${ZSH_THEME_OVERRIDE:-darkblood}"
 
 if [ -x /usr/bin/numlockx ]; then
   /usr/bin/numlockx on
