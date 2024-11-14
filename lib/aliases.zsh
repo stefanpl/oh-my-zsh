@@ -5,6 +5,8 @@ alias po='popd'
 alias ...='cd ../..'
 alias -- -='cd -'
 
+alias timing='time --format "✅ Finished command: %C\n🕑 Elapsed time: %E"'
+
 # super user
 alias -g _='sudo'
 alias please='sudo'
@@ -36,6 +38,8 @@ alias kp="keepass2 &"
 alias mkd="makeDirectoryAndGoThere"
 alias h="cd $HOME/shortcuts"
 alias s="git status"
+alias git-ignore-folder='echo "*\n!.gitignore" >> .gitignore'
+alias gif="git-ignore-folder"
 alias rma="sudo rm -rfv"
 alias keys="sudo subl /usr/share/x11/xkb/symbols/de"
 alias tt="toggleTouchpad"
@@ -333,6 +337,7 @@ alias no-push="git remote set-url --push gitlab no-pushing-to-upstream-allowed"
 alias gcol="git checkout \`gbs | grep -v -e \"^*\" | head -n1 \`"
 alias gcom="git checkout main"
 alias gcod="git checkout develop"
+alias gcop="git checkout production"
 alias gcos="git checkout staging"
 alias gpl="git pull"
 alias git-push-to-new-gitlab="git push -u gitlab \`git branch --show-current\`"
@@ -341,7 +346,7 @@ alias pt="poetry"
 alias ptr="poetry run"
 alias pts="poetry shell"
 alias atc="cat ~/coding/snippets/src/bash-aliases.sh ya"
-
+alias gtag="git tag -l | sort -V"
 alias opy="alias py='python'"
 if [ -z "${PYTHON_GLOBAL_PATH}" ]; then
   alias py="python"
@@ -351,3 +356,8 @@ fi
 
 alias da="django-admin"
 alias pm="python manage.py"
+
+alias brt="bun run test"
+alias brr="bun run run"
+alias br="bun run"
+alias nrtc="npm run typecheck"

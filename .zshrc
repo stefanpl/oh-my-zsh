@@ -17,6 +17,10 @@ else
   fi
 fi
 
+if [ "${IS_MACOS}" ]; then
+  alias time="gtime"
+fi
+
 # use vim as default editor
 export EDITOR=vim
 
@@ -195,3 +199,9 @@ bindkey "^?" backward-delete-char
 
 export PATH="$HOME/.rbenv/bin:$PATH"
 command -v rbenv >/dev/null && eval "$(rbenv init -)"
+
+# use Brew's python as the default
+export PATH="/opt/homebrew/opt/python/libexec/bin:$PATH"
+
+# bun completions
+[ -s "/Users/stefan/.bun/_bun" ] && source "/Users/stefan/.bun/_bun"
